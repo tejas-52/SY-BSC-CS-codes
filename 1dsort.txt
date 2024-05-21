@@ -1,0 +1,75 @@
+#include<iostream.h>
+#include<conio.h>
+void asc();
+void desc();
+int a[10],i,j,t,n;
+main()
+{
+clrscr();
+cout<<"enter the limit :\n";
+cin>>n;
+for(i=0;i<n;i++)
+{
+cout<<"enter an elements :\n";
+cin>>a[i];
+}
+cout<<"enter 1.asc:\n 2.desc:\n";
+cin>>t;
+while(t<3)
+{
+switch(t)
+{
+case 1:
+asc();
+break;
+case 2:
+desc();
+default:
+cout<<"invalid choice >>>\n";
+}
+cout<<"enter 1.asc:\n 2.desc:\n";
+cin>>t;
+}
+getch();
+return 0;
+}
+void asc()
+{
+for(i=0;i<n-1;i++)
+{
+for(j=i+1;j<n;j++)
+{
+if(a[i]>a[j])
+{
+t=a[i];
+a[i]=a[j];
+a[j]=t;
+}
+}
+}
+cout<<"the array in ascending order:\n";
+for(i=0;i<n;i++)
+{
+cout<<a[i]<<"\t";
+}
+}
+void desc()
+{
+for(i=0;i<n-1;i++)
+{
+for(j=i+1;j<n;j++)
+{
+if(a[i]<a[j])
+{
+t=a[i];
+a[i]=a[j];
+a[j]=t;
+}
+}
+}
+cout<<"the array in descending order :\n";
+for(i=0;i<n;i++)
+{
+cout<<a[i]<<"\t";
+}
+}
