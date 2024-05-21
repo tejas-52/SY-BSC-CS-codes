@@ -1,0 +1,87 @@
+#include<iostream.h>
+#include<conio.h>
+int queue[50];
+int n=50;
+int front=-1;
+int rear=-1;
+void queue_insertion()
+{
+int val;
+if(rear==n-1)
+cout<<"queue is overflow "<<endl;
+else
+{
+front=0;
+cout<<"insert value in the queue:\n";
+cin>>val;
+rear++;
+queue[rear]=val;
+}
+}
+void queue_deletion()
+{
+if(front==-1)
+{
+cout<<"the queue is underflow";
+return;
+}
+else
+{
+cout<<"the element deleted from queue is :"<<queue[front]<<endl;
+front++;
+}
+}
+void display_queue()
+{
+if(front==-1)
+cout<<"the queue elements are :\n";
+else
+{
+for(int i=front;i<rear;i++)
+cout<<queue[i]<<" ";
+cout<<endl;
+}
+}
+int main()
+{
+clrscr();
+int ch;
+cout<<"1. insertion in the queue:"<<endl;
+cout<<"2.deletion element from the queue:"<<endl;
+cout<<"3. display all elements of queue:"<<endl;
+cout<<"4.exit"<<endl;
+do
+{
+cout<<"enter your choice:"<<endl;
+cin>>ch;
+switch(ch)
+{
+case 1:
+{
+queue_insertion();
+break;
+}
+case 2:
+{
+queue_deletion();
+break;
+}
+case 3:
+{
+display_queue();
+break;
+}
+case 4:
+{
+cout<<"exit"<<endl;
+break;
+}
+default:
+{
+cout<<"invalid choice...."<<endl;
+}
+}
+}
+while(ch!=4);
+return 0;
+}

@@ -1,0 +1,35 @@
+#include<iostream.h>
+#include<alloc.h>
+#include<conio.h>
+struct node
+{
+int data;
+struct node *link;
+}*n1,*n2,*n3;
+main()
+{
+struct node*head,*tail;
+n1=(struct node*)malloc(sizeof(struct node));
+n2=(struct node*)malloc(sizeof(struct node));
+n3=(struct node*)malloc(sizeof(struct node));
+cout<<"enter an integer value to be stores in the first node :\n";
+int m;
+cin>>m;
+n1->data=m;
+n1->data=m;
+n1->link=n2;
+*head=*n1;
+*tail=*n3;
+cout<<"enter the data for second node:\n";
+cin>>m;
+n2->data=m;
+n2->link=n3;
+cout<<"enter the data for last node:\n";
+cin>>m;
+n3->data=m;
+n3->link=NULL;
+cout<<"the linear linkes list with single pointer is :\n";
+cout<<n1->data<<"->"<<n2->data<<"->"<<n3->data<<"NULL";
+getch();
+return 0;
+}

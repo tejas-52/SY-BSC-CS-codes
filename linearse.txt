@@ -1,0 +1,35 @@
+#include<iostream.h>
+#include<conio.h>
+void linearsearch(int n);
+main()
+{
+int m;
+clrscr();
+cout<<"enter the limit :\n";
+cin>>m;
+linearsearch(m);
+getch();
+return 0;
+}
+void linearsearch(int n)
+{
+int a[10],i,key;
+cout<<"enter the positive integer in the array :\n";
+for(i=0;i<n;i++)
+{
+cout<<"enter the element:\n";
+cin>>a[i];
+}
+cout<<"the key you want to be search :\n";
+cin>>key;
+for(i=0;i<n;i++)
+{
+if (key==a[i])
+{
+cout<<"key is found ....!\nat position "<<key;
+break;
+}
+}
+if(a[i]!=n)
+cout<<"key is not found....";
+}

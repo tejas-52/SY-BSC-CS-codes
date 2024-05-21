@@ -1,0 +1,60 @@
+#include<iostream.h>
+#include<conio.h>
+#include<alloc.h>
+struct dnode
+{
+struct dnode*llink;
+int data;
+struct dnode*rlink;
+}*n1,*n2,*n3;
+main()
+{
+n1=(struct dnode*)malloc(sizeof(struct dnode));
+cout<<"enter an integer value to be stored in 1 st node:\n";
+int z;
+cin>>z;
+n1->data=z;
+n1->llink=NULL;
+n1->rlink=NULL;
+n2=(struct dnode*)malloc(sizeof(struct dnode));
+cout<<"enter an integer value to be added to the second node:\n";
+cin>>z;
+n2->data=z;
+n2->llink=n1;
+n2->rlink=n2;
+n2->rlink=NULL;
+n3=(struct dnode*)malloc(sizeof(struct dnode));
+cout<<"enter the data for last node :\n";
+cin>>z;
+n3->data =z;
+n2->llink=n3;
+n2->rlink=n3;
+n3->rlink=n3;
+cout<<"1.forword traversing:\n";
+cout<<"2.backword traversing:\n";
+cout<<"enter your choice :\n";
+cin>>z;
+while(z<3)
+{
+switch(z)
+{
+case 1:
+{
+cout<<"forword traversing:\n";
+cout<<n1->data<<"->"<<n2->data<<"->"<<n3->data<<"NULL";
+}
+break;
+case 2:
+{
+cout<<"backword traversing:\n";
+cout<<n3->data<<"<-"<<n2->data<<"<-"<<n1->data<<"<-";
+}
+break;
+}
+cout<<"1.forword traversing:\n";
+cout<<"2.backword traversing:\n";
+cin>>z;
+}
+getch();
+return 0;
+}
